@@ -1,0 +1,5 @@
+deploy_railway.sh
+deploy_railway.ps1
+deploy_railway.bat
+.cf_domain
+.git
