@@ -90,3 +90,10 @@ git clone https://github.com/iWZed/hermes-railway.git && cd hermes-railway && Se
 ## 📢 کانال پشتیبانی (Support Channel)
 برای دریافت آخرین اخبار، کدهای استقرار، به‌روزرسانی‌های جدید و پرسش و پاسخ، به کانال تلگرام ما ملحق شوید:
 👉 **[کانال تلگرام آزمایشگاه Zed Labs (t.me/iWZedLabs)](https://t.me/iWZedLabs)**
+
+---
+
+## 📄 لایسنس (License)
+
+این پروژه تحت لایسنس **MIT** منتشر شده است. استفاده، ویرایش و بازنشر آن با ذکر نام منبع آزاد است.
+
