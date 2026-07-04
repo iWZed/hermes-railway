@@ -137,8 +137,25 @@ git clone https://github.com/iWZed/hermes-railway.git && cd hermes-railway && Se
 
 ---
 
-## 📂 Exposed Services / پورت‌ها و دسترسی به پنل‌ها
+## 🔒 Security & Data Persistence / امنیت و پایداری داده‌ها
 
+### 🛡️ Security / امنیت
+* **EN:** All API keys and Telegram tokens configured through the dashboard are stored locally within the container. Since Railway runs on isolated virtualized infrastructure with enterprise-grade security, your keys are not exposed to the public. Additionally, all traffic routed through Cloudflare Tunnels is fully encrypted end-to-end via SSL/TLS, eliminating the need to expose open ports to the internet.
+* **FA:** تمام کلیدهای API و توکن‌های تلگرام تنظیم شده در داشبورد به صورت محلی درون کانتینر ذخیره می‌شوند. از آنجا که پلتفرم Railway روی زیرساخت‌های ایزوله و امن ابری اجرا می‌شود، کلیدهای شما در معرض دسترسی عموم قرار ندارند. علاوه بر این، تمامی ترافیک عبوری از طریق تونل کلودفلر به صورت سرتاسری (End-to-End) با پروتکل SSL/TLS رمزنگاری می‌شود و نیازی به باز کردن پورت‌های ناامن روی اینترنت نیست.
+
+### 💾 Data Persistence on Railway / پایداری داده‌ها در ریل‌وی
+* **EN:** By default, Railway containers are ephemeral. To ensure your Telegram configuration and API keys are permanently saved across redeployments and automatic restarts, it is highly recommended to mount a **Railway Volume** to the service:
+  1. Go to your service settings in the Railway Dashboard.
+  2. Under the **Volumes** tab, click **Add Volume**.
+  3. Set the mount path to `/root` (where Hermes stores its configuration database under `/root/.hermes` or `/root/.config`).
+* **FA:** به طور پیش‌فرض، کانتینرهای Railway موقتی هستند. برای اطمینان از اینکه تنظیمات بات تلگرام و کلیدهای هوش مصنوعی شما در زمان بالا و پایین شدن کانتینر یا دیپلوی‌های مجدد پاک نمی‌شوند، شدیداً توصیه می‌شود یک **Railway Volume** به سرویس خود متصل کنید:
+  1. در داشبورد Railway به بخش تنظیمات (Settings) سرویس خود بروید.
+  2. در تب **Volumes** روی دکمه **Add Volume** کلیک کنید.
+  3. مسیر اتصال (Mount Path) را روی `/root` تنظیم کنید (جایی که فایل‌های کانفیگ هرمس در مسیر `/root/.hermes` یا `/root/.config` ذخیره می‌شوند).
+
+---
+
+## 📂 Exposed Services / پورت‌ها و دسترسی به پنل‌ها
 | Service / سرویس | Internal Port / پورت داخلی | Description / توضیحات |
 | :--- | :---: | :--- |
 | **Hermes Agent Dashboard** | `9119` | EN: Chat UI, smart agent, and file management <br/> FA: رابط کاربری چت، ایجنت هوشمند و مدیریت فایل‌ها |
